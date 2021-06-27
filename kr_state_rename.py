@@ -1,5 +1,3 @@
-from pprint import pprint
-
 from ClauseWizard import cwparse
 
 
@@ -24,7 +22,7 @@ class kr_state_rename:
         # KR_00_Map_Victory_Points_Native_l_english files
         self.find_in_state_file()
         self.find_in_vp_file()
-        pprint(self.state)
+        # pprint(self.state)
         # exit(0)
 
     # Search in the VP file
@@ -47,12 +45,11 @@ class kr_state_rename:
                         if line_string[3] is not None:
                             language = line_string[3].split(':0')
                             # By default it can look ugly, do some fixing. Ie. ['italian', ' "Corsica"\n']
+                            print(language)
                             formatted_name = str(language[1].strip())
                             formatted_name = formatted_name.replace('"', '')
                             vp = [new_prov, str(language[0]).lower(), formatted_name]
                             self.state['vp_translation_names'].append(vp)
-                            pprint(self.state)
-                            # exit(0)
 
     # Search in the state file
     def find_in_state_file(self):
@@ -72,6 +69,7 @@ class kr_state_rename:
                     if line_string[3] is not None:
                         language = line_string[3].split(':0')
                         # By default it can look ugly, do some fixing. Ie. ['italian', ' "Corsica"\n']
+                        print(language)
                         formatted_name = str(language[1].strip())
                         formatted_name = formatted_name.replace('"', '')
                         new_state = [str(language[0]).lower(), formatted_name]
