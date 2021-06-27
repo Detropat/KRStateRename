@@ -68,6 +68,9 @@ class kr_state_rename:
                     line_string = line.split('_')
                     if line_string[3] is not None:
                         language = line_string[3].split(':0')
+                        if self.state['id'] == '611':
+                            language = line_string[4].split(':0')
+
                         # By default it can look ugly, do some fixing. Ie. ['italian', ' "Corsica"\n']
                         print(language)
                         formatted_name = str(language[1].strip())
