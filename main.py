@@ -3,6 +3,8 @@ import json
 import os
 import os.path
 from os import path
+from pprint import pprint
+from natsort import os_sorted
 
 from kr_state_rename import kr_state_rename
 
@@ -20,7 +22,9 @@ def main():
 
     if not path.isfile(directory_output + 'states.json') and not path.isfile(directory_output + 'languages.json'):
         print('Loading in fresh states, victory points and languages')
-        for state_filename in os.listdir(input_directory_states):
+        files = os.listdir(input_directory_states)
+        files = os_sorted(files)
+        for state_filename in files:
             absolute_file_path_state = os.path.join(input_directory_states, state_filename)
             states.append(kr_state_rename(absolute_file_path_state, directory_input, directory_output).main())
 
@@ -32,20 +36,15 @@ def main():
 
         supported_languages.sort(key=str.lower)
         # Make a save
-        with open(directory_output + 'states.json', 'w', encoding='latin-1') as file:
+        with open(directory_output + 'states.json', 'w', encoding='utf-8') as file:
             json.dump(states, file, ensure_ascii=False)
-        with open(directory_output + 'languages.json', 'w', encoding='latin-1') as file:
+        with open(directory_output + 'languages.json', 'w', encoding='utf-8') as file:
             json.dump(supported_languages, file, ensure_ascii=False)
     else:
         print('Loading in cache files. Ya, for speed!')
 
-    states_file = open(directory_output + 'states.json')
-    states_array = (json.load(states_file))
-    states_file.close()
-
-    languages_file = open(directory_output + 'languages.json')
-    supported_languages_array = (json.load(languages_file))
-    languages_file.close()
+    states_array = json.load(open(directory_output + 'states.json', encoding='utf-8'))
+    supported_languages_array = json.load(open(directory_output + 'languages.json', encoding='utf-8'))
 
     create_csv(states_array, supported_languages_array)
     print('End of rename script')
