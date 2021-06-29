@@ -1,4 +1,7 @@
+from pprint import pprint
+
 from ClauseWizard import cwparse
+import re
 
 
 class kr_state_rename:
@@ -22,8 +25,8 @@ class kr_state_rename:
         # KR_00_Map_Victory_Points_Native_l_english files
         self.find_in_state_file()
         self.find_in_vp_file()
-        # pprint(self.state)
-        # exit(0)
+
+        return self.state
 
     # Search in the VP file
     def find_in_vp_file(self):
@@ -43,9 +46,12 @@ class kr_state_rename:
                         # Split it first by the underscore
                         line_string = line.split('_')
                         if line_string[3] is not None:
-                            language = line_string[3].split(':0')
+                            if len(line_string) == 4:
+                                language = line_string[3].split(':0')
+                            else:
+                                language = line_string[4].split(':0')
+
                             # By default it can look ugly, do some fixing. Ie. ['italian', ' "Corsica"\n']
-                            print(language)
                             formatted_name = str(language[1].strip())
                             formatted_name = formatted_name.replace('"', '')
                             vp = [new_prov, str(language[0]).lower(), formatted_name]
@@ -53,6 +59,7 @@ class kr_state_rename:
 
     # Search in the state file
     def find_in_state_file(self):
+        self.state['translation_names'] = None
         with open(self.input_directory_localisation + '\\KR_00_Map_States_Native_l_english.yml', 'r',
                   encoding="utf-8") as stream:
             for line in stream:
@@ -67,23 +74,23 @@ class kr_state_rename:
                     # Split it first by the underscore
                     line_string = line.split('_')
                     if line_string[3] is not None:
-                        language = line_string[3].split(':0')
-                        if self.state['id'] == '611':
+                        if len(line_string) == 4:
+                            language = line_string[3].split(':0')
+                        else:
                             language = line_string[4].split(':0')
 
                         # By default it can look ugly, do some fixing. Ie. ['italian', ' "Corsica"\n']
-                        print(language)
                         formatted_name = str(language[1].strip())
                         formatted_name = formatted_name.replace('"', '')
-                        new_state = [str(language[0]).lower(), formatted_name]
+                        new_state = [self.state['id'], str(language[0]).lower(), formatted_name]
                         self.state['translation_names'] = new_state
 
     # Parsing a state file
     def parse_state_file(self):
         print('Handling file: ' + self.file)
         with open(self.file, 'r', encoding='latin-1') as f:
-            self.state['raw_decode'] = cwparse(f.read(), False)
-            for k, v in self.state['raw_decode']:
+            raw_decode = cwparse(f.read(), False)
+            for k, v in raw_decode:
                 for state_array, s in v:
                     if 'id' == state_array:
                         self.state['id'] = str(s[0])

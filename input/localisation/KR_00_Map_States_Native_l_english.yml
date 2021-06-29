@@ -1,5 +1,4 @@
 ﻿l_english:
-
  endo_state_1:0 "Corse"
  endo_state_2:0 "Latium"
  endo_state_3:0 "Mittelland"
@@ -943,7 +942,7 @@
  endo_state_941:0 "Deutsch-Samoa"
  endo_state_942:0 "Vorarlberg"
  endo_state_943:0 "Haute-Savoie"
- endo_state_944:0 "Harare" #Transliterated via ALA/LC Amharic tables. This is not Harare Zimbabwe.
+ endo_state_944:0 "Harare"
  endo_state_945:0 "Northern Cape"
  endo_state_946:0 "Eastern Cape"
  endo_state_947:0 "Oranje-Vrystaat"
@@ -1092,14 +1091,6 @@
  endo_state_1090:0 "Vidin"
  endo_state_1091:0 "Riga"
  endo_state_1092:0 "Chechnya"
-
-###############################################
-###                                         ###
-###           FOR RENAMING EVENTS           ###
-###                                         ###
-###############################################
-
-##Europe
  endo_state_1_italian:0 "Corsica"
  endo_state_3_french:0 "Plateau Suisse"
  endo_state_3_german:0 "Schweizer Mittelland"
@@ -1184,7 +1175,7 @@
  endo_state_94_lithuanian:0 "Juodoji Rusija"
  endo_state_94_polish:0 "Ruś Czarna"
  endo_state_94_russian:0 "Volkovysk"
- endo_state_94_belarusian: "Čornaja Ruś"
+ endo_state_94_belarusian:0 "Čornaja Ruś"
  endo_state_95_lithuanian:0 "Pinskas"
  endo_state_95_polish:0 "Pińsk"
  endo_state_96_belarusian:0 "Viłnia"
@@ -1242,7 +1233,7 @@
  endo_state_189_russian:0 "Zhemaitija"
  endo_state_190_latvian:0 "Kurzeme"
  endo_state_190_lithuanian:0 "Kuršas"
- endo_state_190_russian: "Kurlyandiya"
+ endo_state_190_russian:0 "Kurlyandiya"
  endo_state_191_estonian:0 "Tartu"
  endo_state_191_russian:0 "Yuriev"
  endo_state_192_russian:0 "Odessa"
@@ -1298,7 +1289,7 @@
  endo_state_713_ukrainian:0 "Suchava"
  endo_state_722_finnish:0 "Petsamo"
  endo_state_731_greek:0 "Vória Makedonía"
- endo_state_731_serbian:0 "Belomorska Makedonija" #too long
+ endo_state_731_serbian:0 "Belomorska Makedonija"
  endo_state_735_german:0 "Savoyen"
  endo_state_735_italian:0 "Savoia"
  endo_state_736_italian:0 "Istria"
@@ -1384,8 +1375,6 @@
  endo_state_1089_greek:0 "Kártsali"
  endo_state_1089_turkish:0 "Mestanli"
  endo_state_1091_lithuanian:0 "Ryga"
-
-##North America
  endo_state_375_spanish:0 "Norte de Tejas"
  endo_state_376_spanish:0 "Nuevo México"
  endo_state_378_spanish:0 "Alta California"
@@ -1393,8 +1382,6 @@
  endo_state_463_russian:0 "Alyaska"
  endo_state_829_spanish:0 "Media California"
  endo_state_883_spanish:0 "Sur de Tejas"
-
-##South America
  endo_state_302_aymara:0 "Chuqi Yapu"
  endo_state_303_quechua:0 "Lima"
  endo_state_305_quechua:0 "Ikwadur"
@@ -1414,12 +1401,10 @@
  endo_state_903_aymara:0 "Jujuy"
  endo_state_1027_guarani:0 "Wuliwya Chako"
  endo_state_1073_aymara:0 "Tarixa"
-
-##Asia and Pacific Islands
  endo_state_72_chinese:0 "Dongzhi"
  endo_state_72_shan_half:0 "Moeng Tai"
  endo_state_72_shan_full:0 "Taunggyi"
- endo_state_72_thai:0 "Inthanakhon" # Based on Inle Lake
+ endo_state_72_thai:0 "Inthanakhon"
  endo_state_286_cambodian:0 "Prey Nokor"
  endo_state_286_indochinese:0 "Ho Chí Minh"
  endo_state_286_thai:0 "Prainakhon"
@@ -1479,7 +1464,7 @@
  endo_state_629_hawaiian:0 "Hawai'i"
  endo_state_629_japanese:0 "Hawaī"
  endo_state_630_german:0 "Johnstoninseln"
- endo_state_630_hawaiian:0 "Kalama Mokiki" # Kalama Atoll
+ endo_state_630_hawaiian:0 "Kalama Mokiki"
  endo_state_630_japanese:0 "Jonsuton-kanshō"
  endo_state_631_german:0 "Midwayinseln"
  endo_state_631_hawaiian:0 "Pihemanu Kauihelani"
@@ -1498,7 +1483,7 @@
  endo_state_639_english:0 "Gilbert Islands"
  endo_state_639_japanese:0 "Girubāto-shōtō"
  endo_state_641_english:0 "East Polynesia"
- endo_state_641_french:0 "Polynésie française" # EFO is too long
+ endo_state_641_french:0 "Polynésie française"
  endo_state_641_japanese:0 "Nichiryō-Porineshia"
  endo_state_642_german:0 "Phönixinseln"
  endo_state_642_japanese:0 "Fenikkusu-shōtō"
@@ -1559,7 +1544,7 @@
  endo_state_756_burmese:0 "Kyaingtong"
  endo_state_756_chinese:0 "Menggen"
  endo_state_756_shan:0 "Kengtung"
- endo_state_756_thai_full:0 "Khemaratthaburi" # Thai-ised Kengtung traditional name
+ endo_state_756_thai_full:0 "Khemaratthaburi"
  endo_state_757_english:0 "New Guinea"
  endo_state_757_japanese:0 "Nyū-Ginia"
  endo_state_788_tibetan:0 "Ngawa"
@@ -1580,7 +1565,7 @@
  endo_state_846_japanese:0 "Maraya"
  endo_state_856_cambodian:0 "Prek Russey"
  endo_state_856_thai:0 "Putthaimart"
- endo_state_856_vietnamese:0 "Dong Bang Song Me Kong" #too long
+ endo_state_856_vietnamese:0 "Dong Bang Song Me Kong"
  endo_state_858_chinese:0 "Zangnan"
  endo_state_859_chinese:0 "Gaoxiong"
  endo_state_882_laotian:0 "Xamabouli"
@@ -1621,8 +1606,6 @@
  endo_state_1084_russian:0 "Zapadnaya Mongoliya"
  endo_state_1085_uighur:0 "Teklimakan Qumluqi"
  endo_state_1086_chinese:0 "Qiangtang"
-
-##Middle East
  endo_state_164_greek:0 "Dodekánisa"
  endo_state_291_arabic:0 "Baghdad"
  endo_state_339_greek:0 "Smýrna"
@@ -1632,10 +1615,10 @@
  endo_state_349_arabic:0 "Karkuk"
  endo_state_355_greek:0 "Póntos"
  endo_state_417_arabic:0 "Gharb 'Adharbayjan"
- endo_state_417_russian:0 "Zapadnyy Azerbaydzhan" #too long
+ endo_state_417_russian:0 "Zapadnyy Azerbaydzhan"
  endo_state_417_turkish:0 "Bati Azerbaycan"
  endo_state_419_arabic:0 "Shrq 'Adharbayjan"
- endo_state_419_russian:0 "Vostochnyy Azerbaydzhan" #too long
+ endo_state_419_russian:0 "Vostochnyy Azerbaydzhan"
  endo_state_419_turkish:0 "Dogu Azerbaycan"
  endo_state_454_arabic:0 "Al-Quds"
  endo_state_554_arabic:0 "Suriya"
@@ -1648,8 +1631,6 @@
  endo_state_812_arabic:0 "Al Basrah"
  endo_state_819_arabic:0 "As-Sulaymaniyah"
  endo_state_1001_georgian:0 "Chaneli"
-
-##Africa
  endo_state_268_french:0 "Djibouti"
  endo_state_273_arabic:0 "Fizzan"
  endo_state_273_italian:0 "Fezzan"
