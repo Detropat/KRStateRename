@@ -102,4 +102,4 @@ class kr_state_rename:
                             if 'victory_points' == victory_point:
                                 # The first element is the state ID
                                 # The second one is the VP value itself
-                                self.state['provinces'].append(vp[0][0])
+                                self.state['provinces'].append(str(vp[0][0]))
