@@ -2,7 +2,6 @@ import csv
 import json
 import os
 import os.path
-from pprint import pprint
 from os import path
 
 from kr_state_rename import kr_state_rename
@@ -33,10 +32,10 @@ def main():
 
         supported_languages.sort(key=str.lower)
         # Make a save
-        with open(directory_output + 'states.json', 'w') as file:
-            json.dump(states, file)
-        with open(directory_output + 'languages.json', 'w') as file:
-            json.dump(supported_languages, file)
+        with open(directory_output + 'states.json', 'w', encoding='latin-1') as file:
+            json.dump(states, file, ensure_ascii=False)
+        with open(directory_output + 'languages.json', 'w', encoding='latin-1') as file:
+            json.dump(supported_languages, file, ensure_ascii=False)
     else:
         print('Loading in cache files. Ya, for speed!')
 
@@ -96,9 +95,9 @@ def create_csv(states_array=None, supported_languages_array=None):
                     for vp_trans in s['vp_translation_names']:
                         if vp_trans[0] == vp[0] and n == vp_trans[1]:
                             write_value = vp_trans[2]
-                        vp_province.append(write_value)
+                    vp_province.append(write_value)
                 writer.writerow(vp_province)
-            #exit(0)
+            # exit(0)
 
     print('Finished CSV!')
 
