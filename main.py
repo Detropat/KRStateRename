@@ -26,8 +26,8 @@ def main():
             add_language(states[-1]['translation_names'], True)
         if states[-1]['vp_translation_names'] is not None:
             add_language(states[-1]['vp_translation_names'], False)
-        print(supported_languages)
 
+    sorted(supported_languages, key=str.lower)
     pprint(supported_languages)
     print('End of rename script')
 
@@ -37,13 +37,9 @@ def add_language(language, state=True):
         for v in language:
             if v[1] not in supported_languages:
                 supported_languages.append(v[1])
-            else:
-                print('not found ' + v[1])
     else:
         if language[1] not in supported_languages:
             supported_languages.append(language[1])
-        else:
-            print('not found ' + language[1])
 
 
 def create_csv():

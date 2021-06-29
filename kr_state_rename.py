@@ -46,10 +46,12 @@ class kr_state_rename:
                         # Split it first by the underscore
                         line_string = line.split('_')
                         if line_string[3] is not None:
+                            # [' endo', 'vp', '3838', 'italian:0 "Ajaccio"\n']
                             if len(line_string) == 4:
                                 language = line_string[3].split(':0')
                             else:
-                                language = line_string[4].split(':0')
+                                tmp_string = line_string[3] + '_' + line_string[4]
+                                language = tmp_string.split(':0')
 
                             # By default it can look ugly, do some fixing. Ie. ['italian', ' "Corsica"\n']
                             formatted_name = str(language[1].strip())
@@ -77,7 +79,8 @@ class kr_state_rename:
                         if len(line_string) == 4:
                             language = line_string[3].split(':0')
                         else:
-                            language = line_string[4].split(':0')
+                            tmp_string = line_string[3] + '_' + line_string[4]
+                            language = tmp_string.split(':0')
 
                         # By default it can look ugly, do some fixing. Ie. ['italian', ' "Corsica"\n']
                         formatted_name = str(language[1].strip())
